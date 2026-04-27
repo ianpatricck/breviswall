@@ -16,6 +16,10 @@ $ git clone https://github.com/ianpatricck/easy-kanban
 
 ## 🔥 Runining application
 
+```bash
+$ cp .env.example .env 
+```
+
 My recommendation is that you initialize this application using Docker. This way, you avoid version and compatibility issues with the required dependencies and requirements.
 
 ### 🐋 Docker
