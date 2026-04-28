@@ -31,7 +31,7 @@ $twig = Twig::create(__DIR__ . '/', ['cache' => false]);
 $app->add(TwigMiddleware::create($app, $twig));
 
 // Swagger API documentation
-$app->get('/', function ($request, $response) {
+$app->get('/swagger', function ($request, $response) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'swagger.html.twig');
 });
