@@ -21,7 +21,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Exception;
 
-use function App\utils\isAuthorizedUser;
+use function App\Utils\isAuthorizedUser;
 
 class CardController
 {
