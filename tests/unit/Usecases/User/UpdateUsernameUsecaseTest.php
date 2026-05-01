@@ -29,7 +29,7 @@ final class UpdateUsernameUsecaseTest extends TestCase
 
     public static function tearDownAfterClass(): void
     {
-        $pdo = new PDO('sqlite:development.db');
+        $pdo = new PDO('sqlite:database.db');
         $pdo->prepare('DELETE FROM users')->execute();
     }
 

@@ -89,7 +89,7 @@ final class TaskControllerTest extends TestCase
             'name' => 'In development',
             'hex_bgcolor' => '#ffffff',
             'board' => $lastBoard->id,
-            'owner' => $lastBoard->owner, 
+            'owner' => $lastBoard->owner,
         ];
 
         self::$client->request('POST', '/api/cards/create', [
@@ -114,7 +114,7 @@ final class TaskControllerTest extends TestCase
     public static function tearDownAfterClass(): void
     {
         try {
-            $pdo = new PDO('sqlite:development.db');
+            $pdo = new PDO('sqlite:database.db');
             $pdo->prepare('DELETE FROM users')->execute();
             $pdo->prepare('DELETE FROM boards')->execute();
             $pdo->prepare('DELETE FROM cards')->execute();

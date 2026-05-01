@@ -18,7 +18,7 @@ final class DeleteUserUsecaseTest extends TestCase
     public static function setUpBeforeClass(): void
     {
         // Initialize PDO connection
-        self::$pdo = new PDO('sqlite:development.db');
+        self::$pdo = new PDO('sqlite:database.db');
         self::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
         // Create user
