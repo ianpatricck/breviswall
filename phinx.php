@@ -1,7 +1,5 @@
 <?php
 
-// \Dotenv\Dotenv::createImmutable("./")->safeLoad();
-
 return [
     "paths" => [
         "migrations" => "%%PHINX_CONFIG_DIR%%/phinx/migrations",
@@ -16,12 +14,6 @@ return [
             "suffix" => ".db",
             "charset" => "utf8",
         ],
-        // "development" => [
-        //     "adapter" => "sqlite",
-        //     "name" => "development",
-        //     "suffix" => ".db",
-        //     "charset" => "utf8",
-        // ],
     ],
     "version_order" => "creation",
 ];
