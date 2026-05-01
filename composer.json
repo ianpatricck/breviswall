@@ -7,8 +7,7 @@
     "process-timeout": 0
   },
   "scripts": {
-    "serve": "php -S localhost:8000 -t src",
-    "api:generate": "openapi src -o src/swagger.json",
+    "api:generate": "openapi src -o public/swagger.json",
     "test": "phpunit",
     "db:migrate": "phinx migrate",
     "db:rollback": "phinx rollback",
