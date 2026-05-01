@@ -7,4 +7,4 @@ services:
     volumes:
       - .:/usr/src/easy-kanban
     working_dir: /usr/src/easy-kanban
-    command: sh -c "composer install && composer api:generate && php -S 0.0.0.0:8000 -t src"
+    command: sh -c "composer install && composer api:generate && php -S 0.0.0.0:8000 -t public"
