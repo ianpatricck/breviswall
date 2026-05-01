@@ -21,7 +21,7 @@ class DatabaseInMemory implements BaseAdapter
     public function startConnection(): void
     {
         try {
-            $configPDO = 'sqlite:' . __DIR__ . '/../../../development.db';
+            $configPDO = 'sqlite:' . __DIR__ . '/../../../database.db';
             $this->connection = new PDO($configPDO);
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         } catch (\PDOException $exception) {
