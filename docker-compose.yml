@@ -3,8 +3,8 @@ services:
     build: .
     container_name: easy-kanban-app
     ports:
-      - "8000:8000"
+      - "${APP_PORT}:${APP_PORT}"
     volumes:
       - .:/usr/src/easy-kanban
     working_dir: /usr/src/easy-kanban
-    command: sh -c "composer install && composer api:generate && php -S 0.0.0.0:8000 -t public"
+    command: sh -c "composer install && composer api:generate && php -S ${APP_DOCKER_URL} -t public"
