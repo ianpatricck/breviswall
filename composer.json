@@ -10,7 +10,6 @@
     "api:generate": "openapi src -o public/swagger.json",
     "test": "phpunit",
     "db:migrate": "phinx migrate",
-    "db:rollback": "phinx rollback",
     "db:seed": "phinx seed:run"
   },
   "autoload": {
