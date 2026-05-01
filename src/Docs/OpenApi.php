@@ -4,7 +4,7 @@
 // | Documentação da API com Swagger            |
 // |============================================|
 
-namespace App;
+namespace App\Docs;
 
 use OpenApi\Attributes as OA;
 
