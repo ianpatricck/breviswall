@@ -14,7 +14,7 @@ I could use other productivity tools, but I chose to create my own (yes, I’m r
 $ git clone https://github.com/ianpatricck/easy-kanban
 ```
 
-## 🔥 Runnining application
+## 🔥 Running application
 
 ```bash
 $ cp .env.example .env 
