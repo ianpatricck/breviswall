@@ -14,7 +14,7 @@ I could use other productivity tools, but I chose to create my own (yes, I’m r
 $ git clone https://github.com/ianpatricck/easy-kanban
 ```
 
-## 🔥 Runining application
+## 🔥 Runnining application
 
 ```bash
 $ cp .env.example .env 
@@ -25,13 +25,17 @@ My recommendation is that you initialize this application using Docker. This way
 ### 🐋 Docker
 
 ```bash
-$ docker build -t easy-kanban .
-$ docker run -p 8000:8000 -it --name easy-kanban-container -d easy-kanban
+$ docker compose up -d
+$ docker exec easy-kanban-app composer db:migrate
 ```
 
 Now you can see the API documentation at [http://localhost:8000/](http://localhost:8000/).
 
 ## ☠️ Running from source
+
+```bash
+$ cp .env.example .env 
+```
 
 Of course, you can also run this application without Docker. Just make sure to check the requirements beforehand.
 
@@ -56,24 +60,15 @@ $ composer db:migrate
 ### 🚀 Start the http server
 
 ```bash
-$ composer serve
+$ php -S localhost:8000 -t public
 ```
 
 Now you can see the API documentation at http://localhost:8000/.
 
 ### 🧪 Execute tests (PHPUnit)
 
-Here are some useful database commands for quick tests.
-
-```bash
-$ composer db:seed		# Populate the database with fake records.
-$ composer db:rollback		# Revert changes in the database.
-```
-
-Run all tests:
-
 ```bash
 $ composer test
 ```
 
-Test execution will delete all rows in `development.db` file.
+Test execution will delete all rows in `database.db` file.
