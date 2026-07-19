@@ -5,6 +5,6 @@ RUN docker-php-ext-install zip
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-WORKDIR /usr/src/easy-kanban
+WORKDIR /usr/src/breviswall
 
 EXPOSE 8000
