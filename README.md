@@ -1,17 +1,13 @@
-# 🏷️ Easy Kanban
+# 🏷️ BrevisWall 
 
 A simple and quick idea I had to manage my everyday tasks, this isn’t a serious project with robust business rules. However, it can be an excellent aid for those who appreciate simplicity and organization.
-
-I could use other productivity tools, but I chose to create my own (yes, I’m running out of ideas).
-
-## A Simple Kanban
 
 > This repository is currently still under development (I don’t have much free time, sorry 😔).
 
 ### Clone repository
 
 ```bash
-$ git clone https://github.com/ianpatricck/easy-kanban
+$ git clone https://github.com/ianpatricck/breviswall
 ```
 
 ## 🔥 Running application
@@ -26,10 +22,10 @@ My recommendation is that you initialize this application using Docker. This way
 
 ```bash
 $ docker compose up -d
-$ docker exec easy-kanban-app composer db:migrate
+$ docker exec breviswall-app composer db:migrate
 ```
 
-Now you can see the API documentation at [http://localhost:8000/](http://localhost:8000/).
+Now you can see the API documentation at [http://localhost:8000/api](http://localhost:8000/api).
 
 ## ☠️ Running from source
 
@@ -63,7 +59,7 @@ $ composer db:migrate
 $ php -S localhost:8000 -t public
 ```
 
-Now you can see the API documentation at http://localhost:8000/.
+Now you can see the API documentation at http://localhost:8000/api.
 
 ### 🧪 Execute tests (PHPUnit)
 

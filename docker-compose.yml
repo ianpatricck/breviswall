@@ -1,10 +1,10 @@
 services:
   app:
     build: .
-    container_name: easy-kanban-app
+    container_name: breviswall-app
     ports:
       - "${APP_PORT}:${APP_PORT}"
     volumes:
-      - .:/usr/src/easy-kanban
-    working_dir: /usr/src/easy-kanban
+      - .:/usr/src/breviswall/
+    working_dir: /usr/src/breviswall/
     command: sh -c "composer install && composer api:generate && php -S ${APP_DOCKER_URL} -t public"

@@ -10,14 +10,14 @@ use OpenApi\Attributes as OA;
 
 #[OA\OpenApi(
     info: new OA\Info(
-        title: 'Easy Kanban API',
+        title: 'BrevisWall API',
         version: '1.0',
         description: 'This is a Kanban Project Management API',
     ),
     servers: [
         new OA\Server(
             url: 'http://localhost:8000',
-            description: 'Easy Kanban API development environment'
+            description: 'BrevisWall API development environment'
         )
     ],
     security: [['bearerAuth' => []]],

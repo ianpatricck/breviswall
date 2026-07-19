@@ -33,7 +33,7 @@ $app->add(TwigMiddleware::create($app, $twig));
 /*
  * Rota que define o Swagger para documentar a API
  */
-$app->get("/", function ($request, $response) {
+$app->get("/api", function ($request, $response) {
     $view = Twig::fromRequest($request);
     return $view->render($response, "swagger.html.twig");
 });
