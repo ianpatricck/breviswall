@@ -7,6 +7,7 @@
 namespace App\Usecases\Board;
 
 use App\Data\Repositories\BoardRepository;
+use Exception;
 
 class FindManyBoardUsecase
 {
@@ -17,6 +18,13 @@ class FindManyBoardUsecase
     public function execute(array $params = []): array|null
     {
         $limit = !empty($params) && $params['limit'] ? (int) $params['limit'] : null;
-        return $this->boardRepository->findMany($limit);
+
+        $boards = $this->boardRepository->findMany($limit);
+
+        if (empty($boards)) {
+            throw new Exception('Boards could not be found', 404);
+        }
+
+        return $boards;
     }
 }
