@@ -1,7 +1,6 @@
 FROM dunglas/frankenphp:1.12-php8.5
 
 RUN install-php-extensions \
-	pdo_mysql \
 	gd \
 	intl \
 	zip \
@@ -10,7 +9,3 @@ RUN install-php-extensions \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
-
-COPY start.sh /app/start.sh
-
-RUN chmod +x /app/start.sh

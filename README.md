@@ -13,7 +13,7 @@ $ git clone https://github.com/ianpatricck/breviswall
 ## 🔥 Running application
 
 ```bash
-$ cp .env.example .env 
+$ cp ./api/.env.example ./api/.env 
 ```
 
 My recommendation is that you initialize this application using Docker. This way, you avoid version and compatibility issues with the required dependencies and requirements.

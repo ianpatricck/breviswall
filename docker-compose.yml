@@ -1,6 +1,8 @@
 services:
   api:
-    build: .
+    build:
+      context: ./docker/server
+      dockerfile: Dockerfile
     container_name: "breviswall-api"
     # restart: always
     ports:
@@ -8,7 +10,7 @@ services:
       - "443:443"
       - "443:443/udp"
     volumes:
-      - ./:/app
+      - ./api:/app
       - caddy_data:/data
       - caddy_config:/config
     environment:
