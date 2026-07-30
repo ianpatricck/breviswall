@@ -24,7 +24,7 @@ final class UserAuthorizedMiddleware
      *
      * @return Response
      */
-    public static function handle(Request $request, RequestHandler $handler): Response
+    public static function handle(Request $request, RequestHandler $handler)
     {
         $responseFactory = new ResponseFactory();
         $authToken = $request->getHeaderLine('Authorization');
