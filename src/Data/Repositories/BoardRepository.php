@@ -37,7 +37,7 @@ class BoardRepository
         return null;
     }
 
-    public function findMany(int $limit = null): array|null
+    public function findMany(?int $limit): array|null
     {
         $boards = [];
 
@@ -58,7 +58,7 @@ class BoardRepository
             return $boardEntities;
         }
 
-        return null;
+        return [];
     }
 
     public function update(int $id, int $owner, UpdateBoardDTO $dto): void

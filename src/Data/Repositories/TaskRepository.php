@@ -31,7 +31,7 @@ class TaskRepository
         return null;
     }
 
-    public function findMany(int $limit = null): array
+    public function findMany(?int $limit): array
     {
         $tasks = [];
 
