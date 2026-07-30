@@ -16,7 +16,7 @@ use OpenApi\Attributes as OA;
     ),
     servers: [
         new OA\Server(
-            url: 'http://localhost:8000',
+            url: 'https://localhost',
             description: 'BrevisWall API development environment'
         )
     ],
