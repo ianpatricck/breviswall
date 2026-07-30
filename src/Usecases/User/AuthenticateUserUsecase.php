@@ -11,6 +11,7 @@ use App\DTO\AuthenticateUserDTO;
 use Dotenv\Dotenv;
 use Firebase\JWT\JWT;
 use Exception;
+use Firebase\JWT\Key;
 
 $dotenv = Dotenv::createImmutable(dirname(__FILE__, 4));
 $dotenv->load();
@@ -23,6 +24,7 @@ class AuthenticateUserUsecase
 
     public function execute(AuthenticateUserDTO $authenticateUserDTO): string
     {
+
         $user = $this->userRepository->findOneByEmail($authenticateUserDTO->email);
 
         if (!$user) {
@@ -34,14 +36,13 @@ class AuthenticateUserUsecase
         }
 
         $payload = [
-            'exp' => time() + (60 * 10),
+            'exp' => time() + (60 * 60 * 60),
             'iat' => time(),
             'id' => $user->getId(),
             'email' => $user->getEmail()
         ];
 
         $token = JWT::encode($payload, $_ENV['JWT_SECRET'], $_ENV['JWT_ALGORITM']);
-
         return $token;
     }
 }
