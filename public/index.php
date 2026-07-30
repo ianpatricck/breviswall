@@ -5,7 +5,10 @@
 // |============================================|
 
 use DI\ContainerBuilder;
+use Psr\Http\Message\ServerRequestInterface;
+use Slim\Exception\HttpNotFoundException;
 use Slim\Factory\AppFactory;
+use Slim\Psr7\Response;
 
 require __DIR__ . "/../vendor/autoload.php";
 require __DIR__ . "/../src/Utils/isAuthorizedUser.php";
@@ -13,7 +16,31 @@ require __DIR__ . "/../src/Utils/isAuthorizedUser.php";
 $app = AppFactory::create();
 
 $app->addBodyParsingMiddleware();
-$app->addErrorMiddleware(true, true, true);
+
+/*
+ * Adiciona middleware de errors e sobrescreve a resposta para
+ * alguma rota não encontrada.
+ */
+$app->addErrorMiddleware(true, true, true)->setErrorHandler(
+    HttpNotFoundException::class,
+    function (
+        ServerRequestInterface $_request,
+        Throwable $_exception,
+        bool $_displayErrorDetails,
+    ) {
+        $response = new Response();
+        $response->getBody()->write(
+            json_encode([
+                "code" => 404,
+                "message" => "Resource not found",
+            ], JSON_PRETTY_PRINT),
+        );
+
+        return $response
+            ->withStatus(404)
+            ->withHeader("Content-Type", "application/json");
+    },
+);
 
 /*
  * Container que injeta as dependências dos controladores.
