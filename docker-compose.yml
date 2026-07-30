@@ -1,10 +1,22 @@
 services:
-  app:
+  api:
     build: .
-    container_name: breviswall-app
+    container_name: "breviswall-api"
+    # restart: always
     ports:
-      - "${APP_PORT}:${APP_PORT}"
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
     volumes:
-      - .:/usr/src/breviswall/
-    working_dir: /usr/src/breviswall/
-    command: sh -c "composer install && composer api:generate && php -S ${APP_DOCKER_URL} -t public"
+      - ./:/app
+      - caddy_data:/data
+      - caddy_config:/config
+    environment:
+        - SERVER_NAME=localhost
+    tty: true
+
+volumes:
+  caddy_data:
+    name: "breviswall-data"
+  caddy_config:
+    name: "breviswall-config"

@@ -1,10 +1,16 @@
-FROM php:8.3-cli
+FROM dunglas/frankenphp:1.12-php8.5
 
-RUN apt-get update && apt-get install -y zlib1g-dev libzip-dev unzip curl
-RUN docker-php-ext-install zip
+RUN install-php-extensions \
+	pdo_mysql \
+	gd \
+	intl \
+	zip \
+	opcache
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-WORKDIR /usr/src/breviswall
+WORKDIR /app
 
-EXPOSE 8000
+COPY start.sh /app/start.sh
+
+RUN chmod +x /app/start.sh
