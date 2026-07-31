@@ -1,0 +1,24 @@
+{
+  "name": "breviswall",
+  "version": "1.0.0",
+  "description": "A Simple Kanban Task Management",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "vite --port=3000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "kanban",
+    "breviswall",
+    "tasks",
+    "task-manager",
+    "cards",
+    "boards"
+  ],
+  "type": "module",
+  "dependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "preact": "^10.29.7"
+  }
+}
