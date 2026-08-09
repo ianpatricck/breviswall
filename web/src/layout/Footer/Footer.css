@@ -1,0 +1,32 @@
+footer {
+    background-image: url("/images/wave.svg");
+    background-size: cover;
+    background-position: right 20% bottom 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30dvh;
+
+    nav {
+        display: flex;
+        margin-top: 9em;
+    }
+}
+
+.footer__socials {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid black;
+
+    a {
+        margin-left: 5px;
+        color: #333;
+        text-decoration: none;
+        font-size: 11pt;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

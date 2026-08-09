@@ -1,16 +1,24 @@
-import { useState } from "preact/hooks";
+import "./App.css";
+import { LocationProvider, ErrorBoundary, Router, Route } from "preact-iso";
+import { Home } from "@/pages/Home/Home";
+import { Register } from "@/pages/Register/Register";
+import { Dashboard } from "@/pages/Dashboard/Dashboard";
+import { NotFound } from "@/pages/NotFound/NotFound";
+import { Footer } from "@/layout/Footer/Footer";
 
 export function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <p>Counter: {count}</p>
-        <button type="button" onClick={() => setCount(count + 1)}>
-          Incrementar
-        </button>
-      </div>
-    </>
+    <LocationProvider>
+      <ErrorBoundary>
+        <Router>
+          <Home path="/" />
+          <Route path="/signup" component={Register} />
+          <Route path="/dashboard" component={Dashboard} />
+          <NotFound default />
+        </Router>
+      </ErrorBoundary>
+
+      <Footer />
+    </LocationProvider>
   );
 }

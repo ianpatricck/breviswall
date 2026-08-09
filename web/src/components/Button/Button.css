@@ -1,0 +1,15 @@
+.button {
+    background-color: var(--color-green);
+    border: none;
+    padding: 8px;
+    font-size: 12pt;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+
+    transition-duration: 0.5s;
+
+    &:hover {
+        background-color: var(--color-green--secondary);
+    }
+}

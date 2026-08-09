@@ -19,6 +19,7 @@
   "type": "module",
   "dependencies": {
     "@preact/preset-vite": "^2.10.6",
-    "preact": "^10.29.7"
+    "preact": "^10.29.7",
+    "preact-iso": "^2.12.1"
   }
 }

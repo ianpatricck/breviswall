@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-background: rgba(237, 237, 237, 0.8);
+    --color-blue: rgba(4, 79, 255, 0.8);
+    --color-green: rgba(41, 230, 158, 1);
+    --color-green--secondary: rgba(35, 206, 140, 1);
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("fonts/Nunito/Nunito-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("fonts/Nunito/Nunito-Light.ttf") format("truetype");
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("fonts/Nunito/Nunito-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+p,
+label,
+small,
+a,
+input {
+    font-family: "Nunito";
+}
+
+body {
+    background-color: var(--color-background);
+}

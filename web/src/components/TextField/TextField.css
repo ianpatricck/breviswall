@@ -1,0 +1,23 @@
+.field {
+    font-size: 11pt;
+    color: #555;
+    margin-bottom: 1em;
+}
+
+.field__item {
+    display: flex;
+    border-bottom: 1px solid #888;
+    margin-top: 5px;
+
+    input {
+        outline: 0;
+        border: none;
+        background-color: transparent;
+        margin-left: 3px;
+        font-size: 12pt;
+    }
+
+    &:focus-within {
+        border-bottom: 1px solid var(--color-green);
+    }
+}
