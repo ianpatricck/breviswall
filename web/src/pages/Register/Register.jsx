@@ -17,7 +17,7 @@ export function Register() {
 
         <form type="POST" className="register__form">
           <TextField label="Username" icon={UserIcon} type="text" name="username" />
-          <TextField label="Name" icon={EmailIcon} type="text" name="name" />
+          <TextField label="Name" icon={UserIcon} type="text" name="name" />
           <TextField label="Email" icon={EmailIcon} type="text" name="email" />
           <TextField
             label="Password"
