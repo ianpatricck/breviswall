@@ -5,8 +5,9 @@
 }
 
 :root {
-    --color-background: rgba(237, 237, 237, 0.8);
+    --color-background: rgba(249, 249, 249, 1);
     --color-blue: rgba(4, 79, 255, 0.8);
+    --color-blue--secondary: rgba(20, 50, 255, 1);
     --color-green: rgba(41, 230, 158, 1);
     --color-green--secondary: rgba(35, 206, 140, 1);
 }
