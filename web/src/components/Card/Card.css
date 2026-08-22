@@ -1,0 +1,23 @@
+.card {
+    background-color: white;
+    border: 0.03em solid var(--color-blue);
+    box-shadow: 0 5px 0 var(--color-blue--secondary);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 6px;
+    min-width: 250px;
+    min-height: 400px;
+}
+
+.card .navbar {
+    padding: 3px;
+    border-bottom: 1px solid var(--color-blue);
+
+    .card__name {
+        letter-spacing: 1px;
+        font-size: 14px;
+        color: var(--color-blue);
+    }
+}

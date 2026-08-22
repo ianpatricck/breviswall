@@ -15,6 +15,7 @@
         background-color: transparent;
         margin-left: 3px;
         font-size: 12pt;
+        padding: 2px;
     }
 
     &:focus-within {

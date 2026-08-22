@@ -6,10 +6,20 @@
     cursor: pointer;
     border-radius: 5px;
     color: white;
+    display: flex;
+    align-items: center;
 
     transition-duration: 0.5s;
 
     &:hover {
         background-color: var(--color-green--secondary);
+    }
+}
+
+.btn-primary {
+    background-color: var(--color-blue);
+
+    &:hover {
+        background-color: var(--color-blue--secondary);
     }
 }

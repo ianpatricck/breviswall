@@ -1,0 +1,7 @@
+.canva {
+    margin-top: 1em;
+    border-radius: 2px;
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+}

@@ -1,0 +1,26 @@
+.tasks {
+    margin-top: 1em;
+    height: 40vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    nav {
+        background-color: rgba(245, 245, 245, 1);
+        margin-top: 0.5em;
+        padding: 8px;
+        font-family: "Nunito";
+        border: 3px solid transparent;
+        border-radius: 3px;
+        border-left-color: var(--color-green);
+        user-select: none;
+        cursor: pointer;
+        transition-duration: 0.3s;
+
+        &:hover {
+            background-color: rgba(240, 240, 240, 1);
+        }
+    }
+}
