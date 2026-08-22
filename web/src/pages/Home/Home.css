@@ -30,22 +30,28 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 2em;
+
+        h2 {
+            font-size: 12pt;
+        }
     }
 }
 
 .home__logo {
     height: 150px;
     pointer-events: none;
+
+    @media screen and (max-width: 748px) {
+        height: 100px;
+    }
 }
 
 .home__form {
     .links {
         margin-top: 1em;
-        text-align: center;
 
         p {
             font-size: 11pt;
-            max-width: 15vw;
 
             a {
                 color: var(--color-blue);
