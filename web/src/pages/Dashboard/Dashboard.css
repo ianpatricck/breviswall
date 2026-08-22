@@ -1,33 +1,52 @@
 .dashboard {
-    background-color: lightsalmon;
+    background-color: white;
     display: flex;
     margin: 5%;
-    padding: 5px;
     height: 80vh;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .dashboard_sidebar {
-    background-color: salmon;
     padding: 10px;
-    width: 20vw;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    width: 25vw;
 
     .actions {
-        background-color: rosybrown;
         display: flex;
-        justify-content: flex-end;
     }
 
     .boards {
         margin-top: 2vh;
-        background-color: springgreen;
         display: flex;
         flex-direction: column;
 
         .board__item {
             cursor: pointer;
             margin: 2px;
-            background-color: saddlebrown;
+            border-radius: 3px;
+            border: 1px solid var(--color-blue);
+            color: var(--color-blue);
+            font-weight: bold;
             padding: 5px;
+            user-select: none;
+            transition-duration: 0.3s;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                border: 1px solid var(--color-blue--secondary);
+                color: var(--color-blue--secondary);
+                scale: 1.01;
+            }
+        }
+
+        .item--selected {
+            border: 1px solid var(--color-blue--secondary);
+            color: var(--color-blue--secondary);
+            scale: 1.01;
         }
     }
 
@@ -36,35 +55,17 @@
     }
 }
 
-
 .dashboard_content {
-    background-color: palevioletred;
     padding: 1%;
-    width: 100%;
+    overflow-x: hidden;
 
-    .navbar {
-        background-color: royalblue;
-    }
+    .content__navbar {
+        border-bottom: 1px solid var(--color-blue--secondary);
+        padding: 5px;
 
-    .canva {
-        background-color: greenyellow;
-        display: flex;
-
-        .card {
-            background-color: orangered;
-            margin: 15px;
-        }
-
-        .card .navbar {
-            background-color: hotpink;
-
-            .card__name {
-
-            }
-        }
-
-        .card .tasks {
-            background-color: lightslategray;
+        span {
+            font-weight: bolder;
+            color: var(--color-blue);
         }
     }
 }

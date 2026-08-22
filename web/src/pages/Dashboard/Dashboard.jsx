@@ -1,49 +1,45 @@
 import "./Dashboard.css";
+import NewIcon from "/images/new.svg";
+import BoardIcon from "/images/board.svg";
+import { Button } from "@/components/Button/Button";
+import Canva from "@/layout/Canva/Canva";
+import { Modal } from "@/layout/Modal/Modal";
+import { CreateBoardLayout } from "@/layout/Modal/CreateBoardLayout";
 
 export function Dashboard() {
   return (
     <>
+      {/* <Modal>
+        <CreateBoardLayout />
+      </Modal>*/}
+
       <main className="dashboard">
         <aside className="dashboard_sidebar">
           <div className="actions">
-            <button type="button">Create</button>
+            <Button>
+              <img src={NewIcon} style={{ marginRight: 5 }} />
+              Create board
+            </Button>
           </div>
+
           <div className="boards">
-            <span className="board__item">My First Board</span>
-            <span className="board__item">Personal Project</span>
+            <span className="board__item">
+              <img src={BoardIcon} style={{ marginRight: 5 }} />
+              My First Board
+            </span>
+            <span className="board__item">
+              <img src={BoardIcon} style={{ marginRight: 5 }} />
+              Personal Project
+            </span>
           </div>
         </aside>
 
         <section className="dashboard_content">
-          <header className="navbar">
+          <header className="content__navbar">
             <span>My First board</span>
           </header>
 
-          <main className="canva">
-            <article className="card">
-              <header className="navbar">
-                <span className="card__name">Backlog</span>
-              </header>
-
-              <div className="tasks">
-                <nav>Task 1</nav>
-                <nav>Task 2</nav>
-                <nav>Task 3</nav>
-              </div>
-            </article>
-
-            <article className="card">
-              <header className="navbar">
-                <span className="card__name">In Progress</span>
-              </header>
-
-              <div className="tasks">
-                <nav>Task 1</nav>
-                <nav>Task 2</nav>
-                <nav>Task 3</nav>
-              </div>
-            </article>
-          </main>
+          <Canva />
         </section>
       </main>
     </>
