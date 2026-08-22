@@ -1,6 +1,10 @@
+import { useLocation } from "preact-iso";
 import "./Footer.css";
 
 export function Footer() {
+  const { path } = useLocation();
+  if (path == "/dashboard") return;
+
   return (
     <footer>
       <nav>
