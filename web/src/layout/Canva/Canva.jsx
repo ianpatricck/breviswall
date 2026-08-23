@@ -1,11 +1,14 @@
 import { move } from "@dnd-kit/helpers";
 import { DragDropProvider } from "@dnd-kit/react";
-import { useState } from "preact/hooks";
+import { useContext, useState } from "preact/hooks";
 import Card from "@/components/Card/Card";
 import Task from "@/components/Task/Task";
 import "./Canva.css";
+import { ModalContext } from "@/context/ModalContext";
 
 export default function Canva() {
+  const setModal = useContext(ModalContext);
+
   const [cardItems, setCardItems] = useState({
     backlog: [
       {
@@ -81,6 +84,7 @@ export default function Canva() {
                 index={item.id}
                 column={key}
                 name={item.name}
+                onClick={() => setModal(true, "EDIT_TASK")}
               />
             ))}
           </Card>

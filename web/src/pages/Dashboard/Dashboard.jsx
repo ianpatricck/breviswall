@@ -3,20 +3,18 @@ import NewIcon from "/images/new.svg";
 import BoardIcon from "/images/board.svg";
 import { Button } from "@/components/Button/Button";
 import Canva from "@/layout/Canva/Canva";
-import { Modal } from "@/layout/Modal/Modal";
-import { CreateBoardLayout } from "@/layout/Modal/CreateBoardLayout";
+import { useContext } from "preact/hooks";
+import { ModalContext } from "@/context/ModalContext";
 
 export function Dashboard() {
+  const setModal = useContext(ModalContext);
+
   return (
     <>
-      {/* <Modal>
-        <CreateBoardLayout />
-      </Modal>*/}
-
       <main className="dashboard">
         <aside className="dashboard_sidebar">
           <div className="actions">
-            <Button>
+            <Button onClick={() => setModal(true, "CREATE_BOARD")}>
               <img src={NewIcon} style={{ marginRight: 5 }} />
               Create board
             </Button>

@@ -1,7 +1,7 @@
 import { useSortable } from "@dnd-kit/react/sortable";
 import "./Task.css";
 
-export default function Task({ id, index, column, name }) {
+export default function Task({ id, index, column, name, onClick }) {
   const { ref, isDragging } = useSortable({
     id,
     index,
@@ -11,7 +11,7 @@ export default function Task({ id, index, column, name }) {
   });
 
   return (
-    <nav ref={ref} data-dragging={isDragging}>
+    <nav ref={ref} data-dragging={isDragging} onClick={onClick}>
       {name}
     </nav>
   );

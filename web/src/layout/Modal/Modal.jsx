@@ -1,13 +1,15 @@
-import { useEffect, useRef } from "preact/hooks";
+import { useContext, useEffect, useRef } from "preact/hooks";
 import "./Modal.css";
+import { ModalContext } from "@/context/ModalContext";
 
-export function Modal({ setOpenModal, children }) {
+export function Modal({ children }) {
   const childRef = useRef(null);
+  const setModal = useContext(ModalContext);
 
   useEffect(() => {
     const handleOutsideModalContent = (event) => {
       if (childRef.current && !childRef.current.contains(event.target)) {
-        setOpenModal(false);
+        setModal(false, null);
       }
     };
 
