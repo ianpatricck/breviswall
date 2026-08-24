@@ -2,6 +2,7 @@
     font-size: 11pt;
     color: #555;
     margin-bottom: 1em;
+    max-width: 300px;
 }
 
 .field__item {
