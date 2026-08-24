@@ -13,7 +13,7 @@ export function CreateBoardLayout() {
         label="Description"
         placeholder="New description"
       />
-      <Button type="submit" variant="primary">
+      <Button type="submit" variant="blue">
         Create
       </Button>
     </form>
