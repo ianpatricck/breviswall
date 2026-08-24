@@ -6,10 +6,14 @@
 
 :root {
     --color-background: rgba(249, 249, 249, 1);
-    --color-blue: rgba(4, 79, 255, 0.8);
-    --color-blue--secondary: rgba(20, 50, 255, 1);
     --color-green: rgba(41, 230, 158, 1);
     --color-green--secondary: rgba(35, 206, 140, 1);
+    --color-blue: rgba(4, 79, 255, 0.8);
+    --color-blue--secondary: rgba(20, 50, 255, 1);
+    --color-red: rgba(255, 50, 100, 1);
+    --color-red--secondary: rgba(255, 100, 100, 1);
+    --color-gray: rgba(150, 150, 150, 1);
+    --color-gray--secondary: rgba(150, 150, 150, .8);
 }
 
 @font-face {
