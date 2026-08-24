@@ -16,10 +16,26 @@
     }
 }
 
-.btn-primary {
+.btn-blue {
     background-color: var(--color-blue);
 
     &:hover {
         background-color: var(--color-blue--secondary);
+    }
+}
+
+.btn-red {
+    background-color: var(--color-red);
+
+    &:hover {
+        background-color: var(--color-red--secondary);
+    }
+}
+
+.btn-gray {
+    background-color: var(--color-gray);
+
+    &:hover {
+        background-color: var(--color-gray--secondary);
     }
 }
