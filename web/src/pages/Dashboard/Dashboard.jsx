@@ -3,11 +3,54 @@ import NewIcon from "/images/new.svg";
 import BoardIcon from "/images/board.svg";
 import { Button } from "@/components/Button/Button";
 import Canva from "@/layout/Canva/Canva";
-import { useContext } from "preact/hooks";
+import { useContext, useEffect, useState } from "preact/hooks";
 import { ModalContext } from "@/context/ModalContext";
+import { getBoards } from "@/api/getBoards";
 
 export function Dashboard() {
   const setModal = useContext(ModalContext);
+
+  const [boards, setBoards] = useState([]);
+  const [selectedBoard, setSelectedBoard] = useState(null);
+  const [cardsIndex, setCardsIndex] = useState(null);
+
+  // const cardNames = {
+  //   backlog: "Backlog",
+  //   in_progress: "In Progress",
+  //   done: "Done",
+  //   refactor: "Refactor",
+  //   review: "Review",
+  // };
+
+  useEffect(() => {
+    let boardsResponse = getBoards();
+    setBoards(boardsResponse);
+
+    let cardsIndexMap = {};
+    boardsResponse.forEach((board) => {
+      Object.entries(board.cards).map(([key, value]) => {
+        cardsIndexMap[key] = value.name;
+      });
+
+      const cards = {};
+      Object.entries(board.cards).forEach(([key, value]) => {
+        cards[key] = value.tasks;
+      });
+
+      board.cards = cards;
+    });
+
+    setCardsIndex(cardsIndexMap);
+
+    return () => {
+      boardsResponse = null;
+    };
+  }, []);
+
+  const chooseBoard = (id) => {
+    const board = boards.find((item) => item.id == id);
+    setSelectedBoard(board);
+  };
 
   return (
     <>
@@ -21,23 +64,33 @@ export function Dashboard() {
           </div>
 
           <div className="boards">
-            <span className="board__item">
-              <img src={BoardIcon} style={{ marginRight: 5 }} />
-              My First Board
-            </span>
-            <span className="board__item">
-              <img src={BoardIcon} style={{ marginRight: 5 }} />
-              Personal Project
-            </span>
+            {boards.map((board) => (
+              <span
+                className="board__item"
+                key={board.id}
+                onClick={() => chooseBoard(board.id)}
+              >
+                <img src={BoardIcon} />
+                <p>{board.name}</p>
+              </span>
+            ))}
           </div>
         </aside>
 
         <section className="dashboard_content">
           <header className="content__navbar">
-            <span>My First board</span>
+            <span className={selectedBoard == null && "unselected"}>
+              {selectedBoard?.name ?? "Select a board"}
+            </span>
           </header>
 
-          <Canva />
+          {selectedBoard == null ? (
+            <main className="content--unselected">
+              <h2>Board not selected</h2>
+            </main>
+          ) : (
+            <Canva cards={selectedBoard.cards} cardsIndex={cardsIndex} />
+          )}
         </section>
       </main>
     </>
