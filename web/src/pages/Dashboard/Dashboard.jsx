@@ -1,3 +1,12 @@
+/* ---------------------------------
+ * Página de dashboard
+ * ---------------------------------
+ * Página onde se exibe os componentes
+ * principais do projeto como todas as
+ * tasks, cards e boards.
+ *
+ */
+
 import "./Dashboard.css";
 import NewIcon from "/images/new.svg";
 import BoardIcon from "/images/board.svg";
@@ -14,18 +23,12 @@ export function Dashboard() {
   const [selectedBoard, setSelectedBoard] = useState(null);
   const [cardsIndex, setCardsIndex] = useState(null);
 
-  // const cardNames = {
-  //   backlog: "Backlog",
-  //   in_progress: "In Progress",
-  //   done: "Done",
-  //   refactor: "Refactor",
-  //   review: "Review",
-  // };
-
   useEffect(() => {
     let boardsResponse = getBoards();
     setBoards(boardsResponse);
 
+    // Ajusta o formato do JSON dos cards para serem exibidos
+    // dentro do Canva.
     let cardsIndexMap = {};
     boardsResponse.forEach((board) => {
       Object.entries(board.cards).map(([key, value]) => {

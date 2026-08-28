@@ -1,5 +1,14 @@
-import { useLocation } from "preact-iso";
+/* ---------------------------------
+ * Rodapé da aplicação
+ * ---------------------------------
+ * Layout onde se exibe algumas
+ * informações de rodapé em determinadas
+ * páginas.
+ *
+ */
+
 import "./Footer.css";
+import { useLocation } from "preact-iso";
 
 export function Footer() {
   const { path } = useLocation();

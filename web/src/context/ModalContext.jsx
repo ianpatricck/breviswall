@@ -1,7 +1,18 @@
+/* ---------------------------------
+ * Componente global do modal
+ * ---------------------------------
+ * Componente modal para ser englobado
+ * dentro do componente principal da
+ * aplicação, permitindo o acesso das
+ * propriedades em diferentes níveis
+ * da hierarquia.
+ *
+ */
+
 import { createContext } from "preact";
-import { CreateBoardLayout } from "@/layout/Modal/CreateBoardLayout";
-import { Modal } from "@/layout/Modal/Modal";
 import { useState } from "preact/hooks";
+import { Modal } from "@/layout/Modal/Modal";
+import { CreateBoardLayout } from "@/layout/Modal/CreateBoardLayout";
 import { EditTaskLayout } from "@/layout/Modal/EditTaskLayout";
 
 // Context API - Modal
@@ -17,6 +28,7 @@ export default function ModalProvider({ children }) {
     setModalStatus(modalStatus);
   };
 
+  // Opções de abertura do modal (status)
   const layout = {
     CREATE_BOARD: <CreateBoardLayout />,
     EDIT_TASK: <EditTaskLayout />,

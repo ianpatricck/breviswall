@@ -1,3 +1,11 @@
+/* ---------------------------------
+ * Not Found 404
+ * ---------------------------------
+ * Página exibida quando não se encontra
+ * nenhuma rota ou recurso na plataforma.
+ *
+ */
+
 import "./NotFound.css";
 
 export function NotFound() {

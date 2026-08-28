@@ -1,3 +1,12 @@
+/* ---------------------------------
+ * Componente principal <App />
+ * ---------------------------------
+ * Arquivo que serve como local onde
+ * algumas definições como modal e rotas
+ * são implementadas.
+ *
+ */
+
 import "./App.css";
 import { LocationProvider, ErrorBoundary, Router, Route } from "preact-iso";
 import { Home } from "@/pages/Home/Home";

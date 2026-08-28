@@ -1,3 +1,9 @@
+/* ---------------------------------
+ * Entrypoint da aplicação React
+ * ---------------------------------
+ *
+ */
+
 import { render } from "preact";
 import { App } from "./App.jsx";
 

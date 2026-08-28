@@ -1,3 +1,11 @@
+/* ---------------------------------
+ * Função Mock que simula um consumo
+ * de dados dos quadros de um usuário
+ * através de uma API fake.
+ * ---------------------------------
+ *
+ */
+
 export function getBoards() {
   return [
     {

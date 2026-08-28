@@ -1,3 +1,11 @@
+/* ---------------------------------
+ * Layout para criar um card
+ * ---------------------------------
+ * Formulário para registrar um novo
+ * card dentro do quadro selecionado.
+ *
+ */
+
 import "./CreateBoardLayout.css";
 import { TextField } from "@/components/TextField/TextField";
 import { Button } from "@/components/Button/Button";

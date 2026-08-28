@@ -1,3 +1,11 @@
+/* ---------------------------------
+ * Página de cadastro
+ * ---------------------------------
+ * Página para realização do
+ * cadastro de usuários.
+ *
+ */
+
 import "./Register.css";
 import { Button } from "@/components/Button/Button";
 import { TextField } from "@/components/TextField/TextField";

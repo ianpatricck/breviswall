@@ -1,5 +1,13 @@
-import "./Home.css";
+/* ---------------------------------
+ * Página Home
+ * ---------------------------------
+ * Página inicial onde é mostrado um
+ * simples formulário para realizar o
+ * login para o dashboard.
+ *
+ */
 
+import "./Home.css";
 import { Button } from "@/components/Button/Button";
 import { TextField } from "@/components/TextField/TextField";
 import Logo from "/images/logo.svg";
@@ -29,7 +37,8 @@ export function Home() {
 
           <div className="links">
             <p>
-              Don't have an account yet? <a href="/signup">Sign Up</a> to register.
+              Don't have an account yet? <a href="/signup">Sign Up</a> to
+              register.
             </p>
           </div>
         </form>

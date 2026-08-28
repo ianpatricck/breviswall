@@ -1,3 +1,12 @@
+/* ---------------------------------
+ * Layout para editar uma tarefa
+ * ---------------------------------
+ * Formulário EditTaskLayout para
+ * editar propriedades da task ou
+ * excluir.
+ *
+ */
+
 import "./EditTaskLayout.css";
 import { TextField } from "@/components/TextField/TextField";
 import { Button } from "@/components/Button/Button";

@@ -1,3 +1,9 @@
+/* ---------------------------------
+ * Componente de botão padrão
+ * ---------------------------------
+ *
+ */
+
 import "./Button.css";
 
 export function Button({ children, type, variant, ...rest }) {

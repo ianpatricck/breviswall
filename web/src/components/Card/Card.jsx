@@ -1,6 +1,13 @@
+/* ---------------------------------
+ * Componente de card dentro de
+ * um quadro
+ * ---------------------------------
+ *
+ */
+
+import "./Card.css";
 import { CollisionPriority } from "@dnd-kit/abstract";
 import { useDroppable } from "@dnd-kit/react";
-import "./Card.css";
 
 export default function Card({ children, id, name }) {
   const { ref } = useDroppable({

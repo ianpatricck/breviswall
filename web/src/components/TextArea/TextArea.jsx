@@ -1,3 +1,9 @@
+/* ---------------------------------
+ * Componente TaxtArea padrão
+ * ---------------------------------
+ *
+ */
+
 import "./TextArea.css";
 
 export function TextArea() {

@@ -1,3 +1,12 @@
+/* ---------------------------------
+ * Componente layout Canva
+ * ---------------------------------
+ * Layout onde é possível interagir
+ * com os cards e tarefas de cada
+ * quadro criada e atualizado.
+ *
+ */
+
 import "./Canva.css";
 import { move } from "@dnd-kit/helpers";
 import { DragDropProvider } from "@dnd-kit/react";
