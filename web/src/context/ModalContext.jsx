@@ -14,6 +14,7 @@ import { useState } from "preact/hooks";
 import { Modal } from "@/layout/Modal/Modal";
 import { CreateBoardLayout } from "@/layout/Modal/CreateBoardLayout";
 import { EditTaskLayout } from "@/layout/Modal/EditTaskLayout";
+import { EditCardLayout } from "@/layout/Modal/EditCardLayout";
 
 // Context API - Modal
 export const ModalContext = createContext();
@@ -31,6 +32,7 @@ export default function ModalProvider({ children }) {
   // Opções de abertura do modal (status)
   const layout = {
     CREATE_BOARD: <CreateBoardLayout />,
+    EDIT_CARD: <EditCardLayout />,
     EDIT_TASK: <EditTaskLayout />,
   };
 
