@@ -9,3 +9,9 @@ RUN install-php-extensions \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
+
+COPY api ./
+
+RUN composer install --no-interaction --optimize-autoloader
+RUN composer db:migrate
+RUN composer api:generate
