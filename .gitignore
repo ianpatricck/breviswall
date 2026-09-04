@@ -5,3 +5,4 @@ node_modules/
 database.db
 .env
 swagger.json
+dist
