@@ -1,6 +1,8 @@
+![Markdown Logo](web/public/images/logo.svg)
+
 # 🏷️ BrevisWall 
 
-A simple and quick idea I had to manage my everyday tasks, this isn’t a serious project with robust business rules. However, it can be an excellent aid for those who appreciate simplicity and organization.
+A simple and quick idea I had to manage tasks, this isn’t a serious project with robust business rules. However, it can be an excellent aid for those who appreciate simplicity and organization.
 
 > This repository is currently still under development (I don’t have much free time, sorry 😔).
 
@@ -24,7 +26,10 @@ My recommendation is that you initialize this application using Docker. This way
 $ docker compose up -d
 ```
 
-Now you can see the API documentation at [https://localhost/api](https://localhost/api).
+Access the platform:
+
+- 🤖 API:  [https://localhost/api](https://localhost/api).
+- 🌐 Web: [https://localhost:3000](https://localhost:3000/) 
 
 ### 🧪 Execute tests (PHPUnit)
 
