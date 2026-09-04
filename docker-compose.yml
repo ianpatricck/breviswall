@@ -16,9 +16,28 @@ services:
     environment:
         - SERVER_NAME=localhost
     tty: true
+    networks:
+      - breviswall-network
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile
+    container_name: "breviswall-web"
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - breviswall-network
 
 volumes:
   caddy_data:
     name: "breviswall-data"
   caddy_config:
     name: "breviswall-config"
+
+networks:
+  breviswall-network:
+    driver: bridge
